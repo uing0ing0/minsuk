@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "mobilex-sample-project"
+version = "0.1.0"
+description = "MobileX Placeholder Project"
+authors = ["Sangyu Lee <me@sangyul.ee>"]
+readme = "README.md"
+packages = [
+    {include = "./*.py"}
+]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+Flask = "^3.0.3"
+gunicorn = "^22.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
