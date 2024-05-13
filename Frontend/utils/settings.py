@@ -8,4 +8,5 @@ class Settings(BaseSettings):
     client: MobileXClient = MobileXClient()
 
     class Config:
-        env_nested_delimiter = '_'
+        env_nested_delimiter = '__'
+        env_prefix = 'FRONTEND_'

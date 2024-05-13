@@ -29,7 +29,7 @@ RUN --mount=type=cache,target=${POETRY_CACHE_DIR} \
 FROM "docker.io/library/python:${PYTHON_VERSION}-slim-${PYTHON_DIST}" as runtime
 
 # Configure entrypoint
-ENTRYPOINT ["usr/bin/env"]
+ENTRYPOINT ["/usr/bin/env"]
 CMD [ "fastapi", "run", "main.py" ]
 
 # Configure runtime environment variables
@@ -38,4 +38,4 @@ ENV PATH="/app/.venv/bin:${PATH}"
 # Load package source codes
 WORKDIR /app
 COPY --from=builder /app/.venv .venv
-ADD * .
+ADD ./ .
