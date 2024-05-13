@@ -16,15 +16,6 @@ spec:
       labels:
         app: huggingface-tgi
     spec:
-      affinity:
-        nodeAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-              - matchExpressions:
-                  - key: nvidia.com/gpu.product
-                    operator: In
-                    values:
-                      - NVIDIA-A10
       containers:
         - name: huggingface-tgi
           image: ghcr.io/huggingface/text-generation-inference:2.0
