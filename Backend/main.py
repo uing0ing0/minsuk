@@ -8,7 +8,7 @@ import routers
 dotenv.load_dotenv()
 
 app = FastAPI(
-    root_path=os.environ.get('BASE_URL', '/'),
+    root_path=os.environ.get('BASE_URL', ''),
 )
 
 # Register all available routers
