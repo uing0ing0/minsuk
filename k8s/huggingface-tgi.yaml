@@ -117,7 +117,7 @@ spec:
     - ReadWriteMany
   resources:
     requests:
-      storage: 1Ti
+      storage: 100Gi
   storageClassName: ceph-filesystem
 # ---
 # apiVersion: v1
