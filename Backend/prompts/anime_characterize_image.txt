@@ -5,3 +5,6 @@ Please describe the situation into 1 english sentence to draw an image.
 - The charactors' names
 - The summarized situation
 - Key line quotes
+
+# Guideline
+- Make it clear that this is an animation situation
