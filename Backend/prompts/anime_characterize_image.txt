@@ -1,10 +1,9 @@
-Please describe the situation into 1 english sentence to draw an image.
+Please depict this situation into 1 English sentence to generate an image.
 
 # Requirements
-- The animation name
+- The animation name and version
 - The charactors' names
 - The summarized situation
-- Key line quotes
 
 # Guideline
-- Make it clear that this is an animation situation
+- Purify inappropriate terms
