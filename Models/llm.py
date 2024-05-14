@@ -19,7 +19,7 @@ class BaseLLMModel(BaseModel, metaclass=ABCMeta):
 
 
 class ChatGPTModel(BaseLLMModel):
-    model: str = 'gpt-4-turbo'
+    model: str = 'gpt-4o'
     temperature: float = 0.7
 
     def build(self) -> LLM:
