@@ -1,4 +1,4 @@
-from models.characterize import InputModel, OutputModel
+from models.anime_characterize import InputModel, OutputModel
 from utils.page import PageModel
 
 

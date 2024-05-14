@@ -17,7 +17,7 @@ class MobileXClient(BaseModel):
         response = httpx.post(
             url=f'{self.base_url}func/{function}',
             json=input.model_dump(),
-            timeout=60.0,
+            timeout=300.0,
         )
         data = response.json()
         if data is None:
