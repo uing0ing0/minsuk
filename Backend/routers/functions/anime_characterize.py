@@ -5,7 +5,7 @@ from fastapi import APIRouter
 from llm.chat import build as build_chat
 from llm.image import build as build_drawer
 from llm.store import LLMStore
-from Backend.models.anime_characterize import InputModel, OutputModel
+from models.anime_characterize import InputModel, OutputModel
 
 # Configure API router
 router = APIRouter(
