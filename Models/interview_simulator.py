@@ -2,8 +2,6 @@ from typing import Literal
 
 from pydantic import BaseModel, Field
 
-MAX_LENGTH = 3
-
 
 class InputModel(BaseModel):
     target_company: str = Field(
