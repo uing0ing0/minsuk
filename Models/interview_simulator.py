@@ -12,6 +12,7 @@ class InputModel(BaseModel):
     target_job: Literal[
         'Backend Developer',
         'Frontend Developer',
+        'AI Researcher',
         'Cloud Engineer',
     ] = Field(
         default='Backend Developer',
