@@ -4,6 +4,7 @@ from langchain_core.output_parsers.string import StrOutputParser
 from langchain_core.prompts.chat import (
     ChatPromptTemplate,
     HumanMessagePromptTemplate,
+    MessagesPlaceholder,
 )
 
 
@@ -15,8 +16,20 @@ def build(name: str, llm: LLM):
     # Create a prompt template
     prompt = ChatPromptTemplate.from_messages(
         [
+            MessagesPlaceholder(
+                variable_name='chat_prefix',
+                optional=True,
+            ),
             SystemMessage(content=content),
+            MessagesPlaceholder(
+                variable_name='chat_history',
+                optional=True,
+            ),
             HumanMessagePromptTemplate.from_template('{input_context}'),
+            MessagesPlaceholder(
+                variable_name='chat_suffix',
+                optional=True,
+            ),
         ]
     )
 

@@ -1,0 +1,7 @@
+Please describe the situation into 1 english sentence to draw an image.
+
+# Requirements
+- The animation name
+- The charactors' names
+- The summarized situation
+- Key line quotes

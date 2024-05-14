@@ -5,6 +5,7 @@ from pydantic import BaseModel
 import streamlit as st
 import streamlit_pydantic as sp
 
+from models.base.image_preview import ImagePreviewModel
 from utils.page import PageModel
 
 
@@ -72,6 +73,10 @@ def render(model: PageModel) -> None:
     )
     if not output_model:
         return st.stop()
+
+    # Preview the images
+    if isinstance(output_model, ImagePreviewModel):
+        st.image(str(output_model.image_url))
 
     # Show outputs
     match model.output_type:

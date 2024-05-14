@@ -26,7 +26,7 @@ store = LLMStore()
 async def call_acrostic_generator(model: InputModel) -> OutputModel:
     # Create a LLM chain
     chain = build(
-        name=os.path.basename(__file__)[:-3],
+        name=NAME,
         llm=store.get(model.llm_type),
     )
 

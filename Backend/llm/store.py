@@ -1,6 +1,10 @@
 from langchain_core.language_models.llms import LLM
 
-from models.llm import BaseLLMModel, ChatGPTModel, HuggingFaceEndpointModel
+from models.base.llm import (
+    BaseLLMModel,
+    ChatGPTModel,
+    HuggingFaceEndpointModel,
+)
 
 _MODELS: list[BaseLLMModel] = [
     ChatGPTModel(

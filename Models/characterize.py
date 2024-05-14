@@ -2,13 +2,19 @@ from typing import Literal
 
 from pydantic import BaseModel, Field
 
+from models.base.image_preview import ImagePreviewModel
+
 
 class InputModel(BaseModel):
     animation: str = Field(
         description='애니 제목',
         default='소드아트온라인 1부',
     )
-    charactor: str = Field(
+    my_charactor: str = Field(
+        description='캐릭터 이름',
+        default='키리토',
+    )
+    target_charactor: str = Field(
         description='캐릭터 이름',
         default='아스나',
     )
@@ -29,7 +35,7 @@ class InputModel(BaseModel):
     )
 
 
-class OutputModel(BaseModel):
+class OutputModel(ImagePreviewModel):
     output: str = Field(
-        description='삼행시 결과물',
+        description='응답',
     )

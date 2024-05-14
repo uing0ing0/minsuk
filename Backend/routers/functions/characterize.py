@@ -2,7 +2,8 @@ import os
 
 from fastapi import APIRouter
 
-from llm.chat import build
+from llm.chat import build as build_chat
+from llm.image import build as build_drawer
 from llm.store import LLMStore
 from models.characterize import InputModel, OutputModel
 
@@ -25,21 +26,34 @@ store = LLMStore()
 @router.post(f'/func/{NAME}')
 async def call_acrostic_generator(model: InputModel) -> OutputModel:
     # Create a LLM chain
-    chain = build(
-        name=os.path.basename(__file__)[:-3],
+    chain = build_chat(
+        name=NAME,
         llm=store.get(model.llm_type),
     )
 
-    return OutputModel(
-        output=chain.invoke({
-            'input_context': f'''
-                # About Charactor
-                * Animation name: {model.animation}
-                * Charactor name: {model.charactor}
-                * Charactor's current situation: {model.situation}
+    input = f'''
+        # About Charactor
+        * Animation name: {model.animation}
+        * Charactor name: {model.target_charactor}
+        * Charactor's current situation: {model.situation}
 
-                # User's Talk
-                {model.context}
-            ''',
-        }),
+        # About Me
+        * User's Charactor name: {model.my_charactor}
+
+        # User's Talk
+        {model.context}
+    '''
+    output = chain.invoke({
+        'input_context': input,
+    })
+
+    drawer = build_drawer(
+        name=NAME,
+        chain=chain,
+    )
+    image_url = drawer.draw(input, output)
+
+    return OutputModel(
+        image_url=image_url,
+        output=output,
     )
