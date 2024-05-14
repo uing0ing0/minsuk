@@ -13,5 +13,6 @@ app = FastAPI(
 
 # Register all available routers
 app.include_router(routers.functions.acrostic_generator.router)
+app.include_router(routers.functions.interview_simulator.router)
 app.include_router(routers.health.router)
 app.include_router(routers.home.router)

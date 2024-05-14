@@ -16,6 +16,7 @@ class InputModel(BaseModel):
     )
 
     llm_type: Literal['chatgpt', 'huggingface'] = Field(
+        alias='Large Language Model Type',
         description='사용할 LLM 종류',
         default='chatgpt',
     )

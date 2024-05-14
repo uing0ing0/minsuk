@@ -1,1 +1,4 @@
-from . import acrostic_generator
+from . import (  # noqa: F401
+    acrostic_generator,
+    interview_simulator,
+)

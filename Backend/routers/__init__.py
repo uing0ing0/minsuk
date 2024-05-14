@@ -1,1 +1,5 @@
-from . import functions, health, home
+from . import (  # noqa: F401
+    functions,
+    health,
+    home,
+)
