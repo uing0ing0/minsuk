@@ -2,9 +2,9 @@ import os
 
 from fastapi import APIRouter
 
-from llm.chat import build
-from llm.store import LLMStore
-from models.interview_simulator import InputModel, OutputModel
+from mobilex.Backend.routers.functions.llm.chat import build
+from mobilex.Backend.routers.functions.llm.store import LLMStore
+from mobilex.Backend.routers.functions.llm.models.interview_simulator import InputModel, OutputModel
 
 # Configure API router
 router = APIRouter(
