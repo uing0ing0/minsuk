@@ -2,9 +2,9 @@ import os
 
 from fastapi import APIRouter
 
-from llm.chat import build
-from llm.store import LLMStore
-from models.acrostic_generator import InputModel, OutputModel
+from mobilex.Backend.routers.functions.llm.chat import build
+from mobilex.Backend.routers.functions.llm.store import LLMStore
+from mobilex.Backend.routers.functions.llm.models.youtube_topic_recommendations import InputModel, OutputModel
 
 # Configure API router
 router = APIRouter(
@@ -32,6 +32,11 @@ async def call_acrostic_generator(model: InputModel) -> OutputModel:
 
     return OutputModel(
         output=chain.invoke({
-            'input_context': model.word,
+            'input_context': f'''
+                # About Company
+                * target_viewers: {model.target_viewers}
+                * target_age: {model.target_age}
+                * target_country: {model.target_country}
+            ''',
         }),
     )

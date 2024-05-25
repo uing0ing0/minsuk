@@ -7,7 +7,7 @@ import streamlit_pydantic as sp
 
 
 
-from models.base.image_preview import ImagePreviewModel
+from pages.models.base.image_preview import ImagePreviewModel
 from utils.page import PageModel
 
 
@@ -27,12 +27,12 @@ def render(model: PageModel) -> None:
     key = f'/{model.function}/{model.input}'
 
     # Show title
-    st.title(i18n.t(f'{model.function}.title'))
+    st.title(i18n.t(f'Youtube topic recommendations'))
 
     # Load inputs model
     try:
         input_module = __import__(
-            name=f'models.{model.input}',
+            name=f'pages.models.{model.input}',
             fromlist=['InputModel'],
         )
     except ModuleNotFoundError:

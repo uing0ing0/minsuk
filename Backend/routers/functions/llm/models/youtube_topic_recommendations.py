@@ -12,7 +12,7 @@ class InputModel(BaseModel):
         'Technician',
         'Public official',
     ] = Field(
-        default='Backend Developer',
+        default='Students',
     )
     target_age: Literal[
         'junior',

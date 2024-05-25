@@ -28,7 +28,7 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: openai
-                  key: OPENAI_API_KEY
+                  key: "meta-llama/Meta-Llama-3-8B"
           ports:
             - name: http
               protocol: TCP
@@ -42,7 +42,7 @@ spec:
           secret:
             secretName: huggingface-hub
             items:
-              - key: HUGGING_FACE_HUB_TOKEN
+              - key: "meta-llama/Meta-Llama-3-8B"
                 path: token
 ---
 apiVersion: v1

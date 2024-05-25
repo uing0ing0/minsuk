@@ -1,6 +1,20 @@
 import os
 
-import pages
+
+import sys
+
+# Get the current script directory
+current_script_directory = os.path.dirname(os.path.abspath(__file__))
+
+# Get the parent directory
+parent_directory = os.path.dirname(current_script_directory)
+
+# Add the parent directory to the system path
+sys.path.append(parent_directory)
+
+
+
+from pages import render
 from utils.page import PageModel
 from utils.init import init_once
 import streamlit as st
@@ -36,4 +50,4 @@ if __name__ == '__main__':
     )
 
     # Draw
-    pages.render(model)
+    render(model)

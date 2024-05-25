@@ -1,5 +1,5 @@
 from . import (  # noqa: F401
 
-    interview_simulator,
+    youtube_topic_recommendations,
 
 )

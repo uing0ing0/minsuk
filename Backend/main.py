@@ -12,6 +12,6 @@ app = FastAPI(
 )
 
 # Register all available routers
-app.include_router(routers.functions.interview_simulator.router)
+app.include_router(routers.functions.youtube_topic_recommendations.router)
 app.include_router(routers.health.router)
 app.include_router(routers.home.router)

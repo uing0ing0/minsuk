@@ -7,6 +7,7 @@ logo_path = "logo.jpg.png"
 
 if __name__ == '__main__':
     # Init
+    settings = init_once()
     with st.sidebar:
         st.markdown(
             """
