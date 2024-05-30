@@ -1,6 +1,6 @@
 from langchain_core.language_models.llms import LLM
 
-from mobilex.Backend.routers.functions.llm.models.base.llm import (
+from .models.base.llm import (
     BaseLLMModel,
     ChatGPTModel,
     HuggingFaceEndpointModel,
