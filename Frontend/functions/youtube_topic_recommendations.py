@@ -1,4 +1,4 @@
-from models.interview_simulator import InputModel, OutputModel
+from models.youtube_topic_recommendations import InputModel, OutputModel
 from utils.page import PageModel
 
 
