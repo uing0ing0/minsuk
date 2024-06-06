@@ -20,7 +20,7 @@ spec:
       containers:
         - name: server
           # TODO(user): change to your image
-          image: docker.io/peter4885/mobilex_front:v0.1
+          image: docker.io/peter4885/mobilex-exp-frontend:v4
           env:
             - name: FRONTEND_CLIENT__BASE_URL
               value: http://backend:8000
